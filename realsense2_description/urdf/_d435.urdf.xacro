@@ -44,16 +44,16 @@ aluminum peripherial evaluation case.
     <xacro:property name="d435_cam_depth_pz" value="${d435_cam_height/2}"/>
 
     <!-- camera body, with origin at bottom screw mount -->
-    <joint name="${name}_joint" type="fixed">
+    <!--joint name="${name}_joint" type="fixed">
       <xacro:insert_block name="origin" />
       <parent link="${parent}"/>
       <child link="${name}_bottom_screw_frame" />
     </joint>
-    <link name="${name}_bottom_screw_frame"/>
+    <link name="${name}_bottom_screw_frame"/-->
 
     <joint name="${name}_link_joint" type="fixed">
-      <origin xyz="${d435_mesh_x_offset} ${d435_cam_depth_py} ${d435_cam_depth_pz}" rpy="0 0 0"/>
-      <parent link="${name}_bottom_screw_frame"/>
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
       <child link="${name}_link" />
     </joint>
 
